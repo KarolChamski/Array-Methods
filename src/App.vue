@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <methods-bar></methods-bar>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MethodsBar from './components/MethodsBar.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  components:{
+    MethodsBar
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
 }
 </style>
