@@ -1,6 +1,6 @@
 <template>
 
-  <methods-bar></methods-bar>
+  <methods-bar :result="result" @map="map"></methods-bar>
   <the-characters :characters="characters" ></the-characters>
 
 
@@ -19,6 +19,7 @@ export default {
   },
   data(){
     return{
+      result: '',
       characters: [
         {
           name: "Micky",
@@ -46,8 +47,15 @@ export default {
           height: 4,
           gifts: 100,
           dressColor: "red",
-          img: 'Micky.png'
+          img: 'Santa.png'
         },
+          {
+            name: "Mrs. Santa",
+            height: 4,
+            gifts: 99,
+            dressColor: "red",
+            img: 'Mrs.Santa.png'
+          },
         {
           name: "Lili",
           height: 1,
@@ -63,28 +71,28 @@ export default {
           img: 'Sophia.png'
         },
         {
-          name: "Mrs. Santa",
-          height: 4,
-          gifts: 99,
-          dressColor: "red",
-          img: 'Mrs.Santa.png'
-        },
-        {
           name: "Mia",
           height: 2,
           gifts: 23,
           dressColor: "green",
-          img: 'Micky.png'
+          img: 'Mia.png'
         },
         {
           name: "John",
           height: 3,
           gifts: 45,
           dressColor: "green",
-          img: 'Micky.png'
+          img: 'John.png'
         },
       ]
     }
+  },
+  methods:{
+    map(){
+      const mapArray = this.characters.map(character => character.name);
+      this.result = "Names of characters: " +  mapArray
+    },
+
   }
 }
 </script>
