@@ -1,13 +1,21 @@
 <template>
+
   <methods-bar></methods-bar>
+  <the-characters :characters="characters" ></the-characters>
+
+
 </template>
 
 <script>
 import MethodsBar from './components/MethodsBar.vue';
+import TheCharacters from './components/TheCharacters.vue';
+
 
 export default {
   components:{
-    MethodsBar
+    MethodsBar,
+    TheCharacters,
+    
   },
   data(){
     return{
@@ -89,17 +97,20 @@ export default {
 
 html {
   font-family: sans-serif;
+
 }
 
 body {
   margin: 0;
   background-color: #C1E5E2;
+
 }
 .wrapper {
   margin-right: auto;
   margin-left: auto;
-  max-width: 1300px;
+  max-width: 1200px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+
 </style>
