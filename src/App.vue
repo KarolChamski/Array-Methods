@@ -109,7 +109,8 @@ export default {
   },
   methods:{
     updateCharacters(){
-    this.updatedCharacters = this.characters
+    this.updatedCharacters = this.characters;
+    this.result = ''
     },
     map(){
       const mapArray = this.characters.map(character => character.name);
@@ -160,11 +161,11 @@ export default {
 * {
   box-sizing: border-box;
   overflow-x: hidden;
+    max-height: 100vh;
 }
 
 html {
-  font-family: sans-serif;
-
+  font-family: 'relation-two', sans-serif;
 }
 
 body {
@@ -179,6 +180,9 @@ body {
   max-width: 1200px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+button{
+  font-family: 'relation-two';
 }
 
 </style>

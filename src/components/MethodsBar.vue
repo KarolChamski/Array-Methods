@@ -12,8 +12,6 @@
     <div class="action-box">
         <div class="choose-box">
 
-
-
             <button v-if="mapOptions" @click="$emit('map')">Names of Characters</button>
 
             <button @click="$emit('filter', 'female')" v-if="filterOptions">Girls</button>
@@ -123,5 +121,20 @@ export default{
     .method-box{
         display: flex;
         flex-direction: column;
+    }
+    .result-box p{
+        background-color: #fff;
+        padding: 1rem 3rem;
+        box-shadow: 0px 3px 6px #00000017;
+        border-radius: 10px;
+    }
+
+button{
+font-size: 22px;
+padding: 0.5rem 1rem;
+box-shadow: 0px 3px 6px #00000017;
+border-radius: 10px;
+border: none;
+margin: 1rem;
     }
 </style>

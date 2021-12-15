@@ -47,6 +47,7 @@ export default{
 
 .character-name{
     text-align: center;
+    font-size: 26px;
 }
 
 </style>
