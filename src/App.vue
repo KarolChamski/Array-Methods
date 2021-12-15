@@ -1,5 +1,5 @@
 <template>
-  <methods-bar @filter="filter" :result="result" @map="map" @sort="sort" @every="every"></methods-bar>
+  <methods-bar  @filter="filter" @map="map" @sort="sort" @every="every" @some="some" @reduce="reduce"></methods-bar>
   <the-characters :characters="updatedCharacters" ></the-characters>
 
 
@@ -26,7 +26,8 @@ export default {
           gifts: 23,
           dressColor: "green",
           img: 'Micky.png',
-          gender: "male"
+          gender: "male",
+          type: "elf"
         },
         {
           name: "Ollie",
@@ -34,7 +35,8 @@ export default {
           gifts: 8,
           dressColor: "green",
           img: 'Ollie.png',
-          gender: "male"
+          gender: "male",
+          type: "elf"
         },
         {
           name: "Elly",
@@ -42,7 +44,8 @@ export default {
           gifts: 30,
           dressColor: "green",
           img: 'Elly.png',
-          gender: "female"
+          gender: "female",
+          type: "elf"
         },
         {
           name: "Santa",
@@ -50,7 +53,8 @@ export default {
           gifts: 100,
           dressColor: "red",
           img: 'Santa.png',
-          gender: "male"
+          gender: "male",
+          type: "santa"
         },
           {
             name: "Mrs. Santa",
@@ -58,7 +62,8 @@ export default {
             gifts: 99,
             dressColor: "red",
             img: 'Mrs.Santa.png',
-            gender: "female"
+            gender: "female",
+            type: "santa"
           },
         {
           name: "Lili",
@@ -66,7 +71,8 @@ export default {
           gifts: 26,
           dressColor: "green",
           img: 'Lili.png',
-          gender: "female"
+          gender: "female",
+          type: "elf"
         },
         {
           name: "Sophia",
@@ -74,7 +80,8 @@ export default {
           gifts: 65,
           dressColor: "green",
           img: 'Sophia.png',
-          gender: "female"
+          gender: "female",
+          type: "elf"
         },
         {
           name: "Mia",
@@ -82,7 +89,8 @@ export default {
           gifts: 23,
           dressColor: "green",
           img: 'Mia.png',
-          gender: "female"
+          gender: "female",
+          type: "elf"
         },
         {
           name: "John",
@@ -90,7 +98,8 @@ export default {
           gifts: 45,
           dressColor: "green",
           img: 'John.png',
-          gender: "male"
+          gender: "male",
+          type: "elf"
         },
       ],
       updatedCharacters: [],
@@ -129,6 +138,14 @@ export default {
   every(){
     const everyArray = this.characters.every((character) => character.dressColor == "green");
     this.result = everyArray
+  },
+  some(){
+    const someArray = this.characters.some((character)=> character.type == "santa");
+    this.result = someArray
+  },
+  reduce(){
+    const reduceArray = this.characters.reduce ((acc,cur) =>  acc + cur.gifts , 0);
+    this.result = reduceArray
   }
   },
 
