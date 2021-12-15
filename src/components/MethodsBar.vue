@@ -5,7 +5,7 @@
         <button @click="showMapOptions">Map</button>
         <button @click="showFilterOptions">Filter</button>
         <button @click="showSortOptions">Sort</button>
-        <button>Every</button>
+        <button @click="showEveryOptions">Every</button>
         <button>Some</button>
         <button>Reduce</button>
     </div>
@@ -17,6 +17,8 @@
             <button v-if="sortOptions" @click="$emit('sort', 'height')">By Height</button>
             <button v-if="sortOptions" @click="$emit('sort', 'name')">By Names</button>
             <button v-if="sortOptions" @click="$emit('sort', 'gifts')">By gifts given</button>
+            <button v-if="everyOptions" @click="$emit('every')">Does every character wear green clothes?</button>
+
 
             
         </div>
@@ -33,7 +35,8 @@ export default{
         return{
             mapOptions: false,
             filterOptions: false,
-            sortOptions: false
+            sortOptions: false,
+            everyOptions: false,
         }
     },
     methods:{
@@ -45,6 +48,9 @@ export default{
         },
         showSortOptions(){
             this.sortOptions = !this.sortOptions
+        },
+        showEveryOptions(){
+            this.everyOptions = !this.everyOptions
         }
 
     }

@@ -1,5 +1,5 @@
 <template>
-  <methods-bar @filter="filter" :result="result" @map="map" @sort="sort"></methods-bar>
+  <methods-bar @filter="filter" :result="result" @map="map" @sort="sort" @every="every"></methods-bar>
   <the-characters :characters="updatedCharacters" ></the-characters>
 
 
@@ -126,7 +126,10 @@ export default {
         this.characters.sort((a,b)=> a.gifts - b.gifts)
       }
     },
-
+  every(){
+    const everyArray = this.characters.every((character) => character.dressColor == "green");
+    this.result = everyArray
+  }
   },
 
     mounted(){
