@@ -4,15 +4,20 @@
     
         <div class="characters">
         <div v-for="character in characters"  :key="character.name" class="character">
+            
+            <div class="cloud">
+            <p>Name:{{character.name}}</p>
+            <p>Gifts given: {{character.gifts}}</p>
+            </div>
+            
+           
             <img class="character-img" :src="`/img/${character.img}`" alt="Sylwetka postaci" />
             <p class="character-name">{{character.name}}</p>
         </div>
         </div>
 
-
-
     </div>
-    <img class="ground" src="../assets/Ground.svg" alt="">
+    
 </template>
 <script>
 export default{
@@ -21,27 +26,27 @@ export default{
 </script>
 
 <style scoped>
-
+    .cloud{
+    text-align: center;
+    opacity: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    }
 .characters{
-    position: absolute;
     display: flex;
     align-items: flex-end;
-    width: 100vw;
-    z-index: 2;
-    bottom: 0;
 }
 .character-img{
     width: 100%;
 }
+.character:hover > .cloud {
+         opacity: 1;
+}
+
 .character-name{
     text-align: center;
 }
-.ground{
-    bottom: 0;
-    position: absolute;
-    width: 100vw;
-}
-
-
 
 </style>

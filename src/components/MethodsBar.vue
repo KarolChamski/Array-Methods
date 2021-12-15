@@ -1,7 +1,6 @@
 <template>
 <div class="wrapper">
     <div class="buttons-bar">
-
         <button @click="showMapOptions">Map</button>
         <button @click="showFilterOptions">Filter</button>
         <button @click="showSortOptions">Sort</button>
@@ -9,8 +8,12 @@
         <button @click="showSomeOptions">Some</button>
         <button @click="showReduceOptions">Reduce</button>
     </div>
+
     <div class="action-box">
         <div class="choose-box">
+
+
+
             <button v-if="mapOptions" @click="$emit('map')">Names of Characters</button>
 
             <button @click="$emit('filter', 'female')" v-if="filterOptions">Girls</button>
@@ -25,11 +28,7 @@
             <button v-if="someOptions" @click="$emit('some')">Is there any Santa?</button>
 
             <button @click="$emit('reduce')" v-if="reduceOptions">Total gifts given</button>
-
-
-
-
-            
+  
         </div>
         <div class="result-box">
             <p>{{result}}</p>
@@ -40,6 +39,7 @@
 <script>
 export default{
     props: ['result'],
+    emits: ['refresh'],
     data(){
         return{
             mapOptions: false,
@@ -51,23 +51,60 @@ export default{
         }
     },
     methods:{
+     
         showMapOptions(){
-            this.mapOptions = !this.mapOptions
+            this.mapOptions = !this.mapOptions;
+            this.filterOptions = false,
+            this.sortOptions = false,
+            this.everyOptions = false,
+            this.someOptions = false,
+            this.reduceOptions = false,
+            this.$emit('refresh')
         },
         showFilterOptions(){
-            this.filterOptions = !this.filterOptions
+            this.filterOptions = !this.filterOptions;
+            this.mapOptions =  false,
+            this.sortOptions = false,
+            this.everyOptions = false,
+            this.someOptions = false,
+            this.reduceOptions = false,
+            this.$emit('refresh')
         },
         showSortOptions(){
-            this.sortOptions = !this.sortOptions
+            this.sortOptions = !this.sortOptions;
+             this.mapOptions =  false,
+            this.filterOptions = false,
+            this.everyOptions = false,
+            this.someOptions = false,
+            this.reduceOptions = false,
+            this.$emit('refresh')
         },
         showEveryOptions(){
-            this.everyOptions = !this.everyOptions
+            this.everyOptions = !this.everyOptions;
+            this.mapOptions =  false,
+            this.filterOptions = false,
+            this.sortOptions = false,
+            this.someOptions = false,
+            this.reduceOptions = false,
+            this.$emit('refresh')
         },
         showSomeOptions(){
-            this.someOptions = !this.someOptions
+            this.someOptions = !this.someOptions;
+            this.mapOptions =  false,
+            this.filterOptions = false,
+            this.sortOptions = false,
+            this.everyOptions = false,
+            this.reduceOptions = false,
+            this.$emit('refresh')
         },
         showReduceOptions(){
             this.reduceOptions = !this.reduceOptions
+            this.mapOptions =  false,
+            this.filterOptions = false,
+            this.sortOptions = false,
+            this.everyOptions = false,
+            this.someOptions = false,
+            this.$emit('refresh')
         }
 
     }

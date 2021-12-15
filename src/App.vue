@@ -1,5 +1,6 @@
 <template>
-  <methods-bar  @filter="filter" @map="map" @sort="sort" @every="every" @some="some" @reduce="reduce"></methods-bar>
+
+  <methods-bar :result="result" @refresh="updateCharacters"  @filter="filter" @map="map" @sort="sort" @every="every" @some="some" @reduce="reduce"></methods-bar>
   <the-characters :characters="updatedCharacters" ></the-characters>
 
 
@@ -169,7 +170,8 @@ html {
 body {
   margin: 0;
   background-color: #C1E5E2;
-
+  overflow-x: hidden;
+  height: 100vh;
 }
 .wrapper {
   margin-right: auto;
