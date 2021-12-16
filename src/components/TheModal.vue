@@ -14,10 +14,12 @@
         </div>
 
         <div class="code">
-            <pre>
-               const characters = [
+            
+        <div class="code-js" v-if="jsVisible">
+        <pre>
+        const characters = [
         {
-          name: "Micky",
+          name: "Micky",                 
           height: 2,
           gifts: 23,
           dressColor: "green",
@@ -99,13 +101,11 @@
         },
       ]        
             </pre>
-        <div class="code-js" v-if="jsVisible">
-        
-        
         </div>
+        
 
         <div class="code-vue" v-if="vueVisible">
-            <p>
+            <pre>
 data(){
     return{
       result: '',
@@ -194,11 +194,9 @@ data(){
       ],  
     }
   }
-  </p>
+            </pre>
         </div>
-
         </div>
-
       </div>
     </div>
   </div>
@@ -211,17 +209,16 @@ export default{
         return{
             jsVisible: true,
             vueVisible: false,
-            code: 'console.log("Hello World")'
         }
     },
     methods: {
         showJs(){
+            this.jsVisible = true;
             this.vueVisible = false;
-            this.jsVisible = !this.jsVisible;
         },
         showVue(){
+            this.vueVisible = true ;
             this.jsVisible = false;
-            this.vueVisible = !this.vueVisible;
         }
     }
 }
@@ -245,10 +242,25 @@ export default{
   color: rgb(255, 255, 255);
 }
 .code{
-    width: 500px;
-    height: 400px;
+    width: 400px;
+    height: 300px;
     background-color: rgb(0, 0, 0);
     color: white;
 }
+.code-js,
+.code-vue{
+    overflow-y: hidden;
+    height: 100%;
 
+}
+pre{
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+
+.buttons button{
+    font-family: 'sans-serif';
+}
 </style>
