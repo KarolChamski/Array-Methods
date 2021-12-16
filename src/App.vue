@@ -173,6 +173,7 @@ body {
   background-color: #C1E5E2;
   overflow-x: hidden;
   height: 100vh;
+  max-height: 100vh;
 }
 .wrapper {
   margin-right: auto;
@@ -183,6 +184,7 @@ body {
 }
 button{
   font-family: 'relation-two';
+  cursor: pointer;
 }
 
 </style>

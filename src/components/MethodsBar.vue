@@ -1,5 +1,8 @@
 <template>
 <div class="wrapper">
+
+
+
     <div class="buttons-bar">
         <button @click="showMapOptions">Map</button>
         <button @click="showFilterOptions">Filter</button>
@@ -28,10 +31,12 @@
             <button @click="$emit('reduce')" v-if="reduceOptions">Total gifts given</button>
   
         </div>
-        <div class="result-box">
+        <div class="result-box" v-if="result !== '' ">
             <p>{{result}}</p>
         </div>
     </div>
+
+    
 </div>
 </template>
 <script>
@@ -109,6 +114,7 @@ export default{
 }
 </script>
 <style scoped>
+
     .buttons-bar{
         display: flex;
         justify-content: space-around;
