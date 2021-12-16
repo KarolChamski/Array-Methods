@@ -119,6 +119,7 @@ export default{
         display: flex;
         justify-content: space-around;
     }
+
     .action-box{
         display: flex;
         flex-direction: column;
@@ -137,10 +138,17 @@ export default{
 
 button{
 font-size: 22px;
-padding: 0.5rem 1rem;
 box-shadow: 0px 3px 6px #00000017;
 border-radius: 10px;
 border: none;
-margin: 1rem;
+margin: 0 0.5rem 0.5rem;
+text-align: center;
+    }
+
+    @media (min-width: 1024px){
+        button {
+            padding: 0.5rem 2rem;
+            margin: 1rem;
+        }
     }
 </style>

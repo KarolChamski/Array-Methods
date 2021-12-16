@@ -2,20 +2,20 @@
 
   <methods-bar :result="result" @refresh="updateCharacters"  @filter="filter" @map="map" @sort="sort" @every="every" @some="some" @reduce="reduce"></methods-bar>
   <the-characters :characters="updatedCharacters" ></the-characters>
-
+  <the-modal></the-modal>
 
 </template>
 
 <script>
 import MethodsBar from './components/MethodsBar.vue';
 import TheCharacters from './components/TheCharacters.vue';
-
+import TheModal from './components/TheModal.vue';
 
 export default {
   components:{
     MethodsBar,
     TheCharacters,
-    
+    TheModal
   },
   data(){
     return{
