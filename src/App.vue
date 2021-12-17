@@ -1,8 +1,9 @@
 <template>
 
-  <methods-bar :result="result" @refresh="updateCharacters"  @filter="filter" @map="map" @sort="sort" @every="every" @some="some" @reduce="reduce"></methods-bar>
+  <methods-bar @showModal="showModal" :codeButtons="codeButtons" :jsCode="jsCode" :vueCode="vueCode" :result="result" @refresh="updateCharacters"  @filter="filter" @map="map" @sort="sort" @every="every" @some="some" @reduce="reduce"></methods-bar>
   <the-characters :characters="updatedCharacters" ></the-characters>
-  <the-modal></the-modal>
+  <the-modal @closeModal="modalVisible = false" :modalVisible="modalVisible"></the-modal>
+
 
 </template>
 
@@ -19,7 +20,11 @@ export default {
   },
   data(){
     return{
+      modalVisible: true,
+      codeButtons: false,
       result: '',
+      jsCode: '',
+      vueCode: '',
       characters: [
         {
           name: "Micky",
@@ -108,19 +113,29 @@ export default {
     }
   },
   methods:{
+    showModal(){
+      this.modalVisible = true
+    },
     updateCharacters(){
     this.updatedCharacters = this.characters;
     this.result = ''
     },
     map(){
       const mapArray = this.characters.map(character => character.name);
-      this.result = "Names of characters: " +  mapArray
+      this.result = "Names of characters: " +  mapArray;
+
+      this.codeButtons = true;
+      this.jsCode = 'const mapArray = characters.map(character => character.name)';
+      this.vueCode = 'const mapArray = this.characters.map(character => character.name)';
+
     },
     filter(gender){
       const filterArray = this.characters.filter(character => character.gender == gender);
       this.updatedCharacters = filterArray;
+      this.codeButtons = true;
     },
     sort(property){
+      this.codeButtons = true;
       if(property == "height"){
         this.characters.sort((a,b)=>  a.height - b.height);
       }
@@ -139,15 +154,18 @@ export default {
     },
   every(){
     const everyArray = this.characters.every((character) => character.dressColor == "green");
-    this.result = everyArray
+    this.result = everyArray;
+    this.codeButtons = true;
   },
   some(){
     const someArray = this.characters.some((character)=> character.type == "santa");
-    this.result = someArray
+    this.result = someArray;
+    this.codeButtons = true;
   },
   reduce(){
     const reduceArray = this.characters.reduce ((acc,cur) =>  acc + cur.gifts , 0);
-    this.result = reduceArray
+    this.result = reduceArray;
+    this.codeButtons = true;
   }
   },
 

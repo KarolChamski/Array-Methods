@@ -10,6 +10,7 @@
         <button @click="showEveryOptions">Every</button>
         <button @click="showSomeOptions">Some</button>
         <button @click="showReduceOptions">Reduce</button>
+        <button @click="$emit('showModal')" >GUIDE</button>
     </div>
 
     <div class="action-box">
@@ -31,9 +32,18 @@
             <button @click="$emit('reduce')" v-if="reduceOptions">Total gifts given</button>
   
         </div>
+
+        <div class="code-box" v-if="codeButtons">
+            <button  @click="showJsCode">Show JS code</button>
+            <button  @click="showVueCode">Show Vue code</button>
+            <pre v-if="jsCodeVisible"> {{ jsCode }} </pre>
+            <pre v-if="vueCodeVisible"> {{ vueCode }}</pre>
+        </div>
+
         <div class="result-box" v-if="result !== '' ">
             <p>{{result}}</p>
         </div>
+
     </div>
 
     
@@ -41,7 +51,7 @@
 </template>
 <script>
 export default{
-    props: ['result'],
+    props: ['result', 'jsCode', 'vueCode', 'codeButtons'],
     emits: ['refresh'],
     data(){
         return{
@@ -50,11 +60,12 @@ export default{
             sortOptions: false,
             everyOptions: false,
             someOptions: false,
-            reduceOptions: false
+            reduceOptions: false,
+            jsCodeVisivle: false,
+            vueCodeVisible: false
         }
     },
     methods:{
-     
         showMapOptions(){
             this.mapOptions = !this.mapOptions;
             this.filterOptions = false,
@@ -108,6 +119,14 @@ export default{
             this.everyOptions = false,
             this.someOptions = false,
             this.$emit('refresh')
+        },
+        showJsCode(){
+            this.jsCodeVisible = true
+            this.vueCodeVisible = false;
+        },
+        showVueCode(){
+            this.vueCodeVisible = true
+            this.jsCodeVisible = false;
         }
 
     }
@@ -134,6 +153,14 @@ export default{
         padding: 1rem 3rem;
         box-shadow: 0px 3px 6px #00000017;
         border-radius: 10px;
+    }
+    .code-box{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+    }
+    pre{
+        background-color: rgb(0, 0, 0);
+        color: white;
     }
 
 button{

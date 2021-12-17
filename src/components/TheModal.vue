@@ -1,6 +1,9 @@
 <template>
-  <div class="background">
+  <div class="background" v-if="modalVisible">
     <div class="wrapper">
+        <div class="modal-close">
+            <button @click="$emit('closeModal')"><img src="../assets/close.svg" alt="zamknij okno"></button>
+        </div>
       <div class="modal">
         <h2>Array Methods</h2>
         <p>
@@ -13,7 +16,9 @@
             <button @click="showVue">Vue.js</button>
         </div>
 
-        <div class="code">
+        <div class="modal-flex">
+
+        <div class="modal-code">
             
         <div class="code-js" v-if="jsVisible">
         <pre>
@@ -197,6 +202,14 @@ data(){
             </pre>
         </div>
         </div>
+
+        <div class="modal-go">
+            <button @click="$emit('closeModal')">OK, let's go!</button>
+        </div>
+
+        </div>
+
+
       </div>
     </div>
   </div>
@@ -204,7 +217,7 @@ data(){
 <script>
 
 export default{
-
+  props: ['modalVisible'],
     data(){
         return{
             jsVisible: true,
@@ -212,6 +225,7 @@ export default{
         }
     },
     methods: {
+
         showJs(){
             this.jsVisible = true;
             this.vueVisible = false;
@@ -220,7 +234,8 @@ export default{
             this.vueVisible = true ;
             this.jsVisible = false;
         }
-    }
+    },
+
 }
 </script>
 <style scoped>
@@ -241,7 +256,27 @@ export default{
   z-index: 9999;
   color: rgb(255, 255, 255);
 }
-.code{
+.modal-flex{
+    display: flex;
+    align-items: center;
+}
+.modal-go{
+    justify-self: flex-end;
+    margin-left: 2rem;
+}
+.modal-close button{
+    padding: 1rem
+}
+.modal-close{
+width: 100%;
+display: flex;
+justify-content: flex-end;
+}
+.modal-go button{
+    padding: 1rem 2rem;
+}
+
+.modal-code{
     width: 400px;
     height: 300px;
     background-color: rgb(0, 0, 0);
@@ -260,7 +295,7 @@ pre{
 
 
 
-.buttons button{
-    font-family: 'sans-serif';
+button{
+    font-family: sans-serif;
 }
 </style>
