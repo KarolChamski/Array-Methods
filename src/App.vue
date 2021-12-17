@@ -1,6 +1,6 @@
 <template>
 
-  <methods-bar @showModal="showModal" :codeButtons="codeButtons" :jsCode="jsCode" :vueCode="vueCode" :result="result" @refresh="updateCharacters"  @filter="filter" @map="map" @sort="sort" @every="every" @some="some" @reduce="reduce"></methods-bar>
+  <methods-bar @showModal="showModal" :codeButtons="codeButtons" :jsCode="jsCode" :result="result" @refresh="updateCharacters"  @filter="filter" @map="map" @sort="sort" @every="every" @some="some" @reduce="reduce"></methods-bar>
   <the-characters :characters="updatedCharacters" ></the-characters>
   <the-modal @closeModal="modalVisible = false" :modalVisible="modalVisible"></the-modal>
 
@@ -129,15 +129,13 @@ export default {
 
       this.codeButtons = true;
       this.jsCode = 'const mapArray = characters.map(character => character.name)';
-      this.vueCode = 'const mapArray = this.characters.map(character => character.name)';
-
     },
     filter(gender){
       const filterArray = this.characters.filter(character => character.gender == gender);
       this.updatedCharacters = filterArray;
       this.codeButtons = true;
       this.jsCode = "const filterArray = characters.map(character => character.gender == 'male')";
-      this.vueCode = 'const filterArray = this.characters.filter(character => character.gender == gender)';
+
     },
     sort(property){
       this.codeButtons = true;
