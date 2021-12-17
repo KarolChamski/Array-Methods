@@ -33,16 +33,20 @@
   
         </div>
 
-        <div class="code-box" v-if="codeButtons">
-            <button  @click="showJsCode">Show JS code</button>
-            <button  @click="showVueCode">Show Vue code</button>
-            <pre v-if="jsCodeVisible"> {{ jsCode }} </pre>
-            <pre v-if="vueCodeVisible"> {{ vueCode }}</pre>
-        </div>
 
         <div class="result-box" v-if="result !== '' ">
             <p>{{result}}</p>
         </div>
+
+        <div class="code-box" v-if="codeButtons">
+            <button  @click="showJsCode">Show JS code</button>
+            <button  @click="showVueCode">Show Vue code</button>
+            <div>
+            <pre v-if="jsCodeVisible"> {{ jsCode }} </pre>
+            <pre v-if="vueCodeVisible"> {{ vueCode }} </pre>
+            </div>
+        </div>
+
 
     </div>
 
@@ -61,7 +65,7 @@ export default{
             everyOptions: false,
             someOptions: false,
             reduceOptions: false,
-            jsCodeVisivle: false,
+            jsCodeVisible: false,
             vueCodeVisible: false
         }
     },
