@@ -38,13 +38,10 @@
             <p>{{result}}</p>
         </div>
 
-        <div class="code-box" v-if="codeButtons" >
-            <button  @click="showJsCode">Show JS code</button>
-
+        
+            <button class="code-box" v-if="codeButtons"  @click="showJsCode">Show JS code</button>
+        
             <pre v-if="jsCodeVisible"> {{ jsCode }} </pre>
-
-        </div>
-
 
     </div>
 

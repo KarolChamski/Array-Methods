@@ -134,7 +134,11 @@ export default {
       const filterArray = this.characters.filter(character => character.gender == gender);
       this.updatedCharacters = filterArray;
       this.codeButtons = true;
-      this.jsCode = "const filterArray = characters.map(character => character.gender == 'male')";
+      if(gender == 'male'){
+        this.jsCode = "const filterArray = characters.map(character => character.gender == 'male')";
+      } else if (gender == 'female'){
+        this.jsCode = "const filterArray = characters.map(character => character.gender == 'female')";
+      }
 
     },
     sort(property){
@@ -142,6 +146,8 @@ export default {
       
       if(property == "height"){
         this.characters.sort((a,b)=>  a.height - b.height);
+        this.jsCode = "const sortHeightArray = characters.sort((a,b) =>  a.height - b.height)";
+        
       }
       else if(property == "name"){
         this.characters.sort((a,b)=>{
@@ -150,26 +156,35 @@ export default {
           } else{
             return 1
           }
-        })
+        });
+        this.jsCode = "const sortNameArray = characters.sort((a,b) =>{ if (a.name < b.name){ return -1 } else { return 1 } })";
+
       }
       else{
-        this.characters.sort((a,b)=> a.gifts - b.gifts)
+        this.characters.sort((a,b)=> a.gifts - b.gifts);
+        this.jsCode = "const sortNameArray = characters.sort( (a,b) => a.gifts - b.gifts)";
       }
     },
   every(){
     const everyArray = this.characters.every((character) => character.dressColor == "green");
     this.result = everyArray;
     this.codeButtons = true;
+    this.jsCode = "const everyArray = characters.every((character) => character.dressColor == 'green')";
+
   },
   some(){
     const someArray = this.characters.some((character)=> character.type == "santa");
     this.result = someArray;
     this.codeButtons = true;
+    this.jsCode = "const someArray = characters.some((character)=> character.type == 'santa')";
+
   },
   reduce(){
     const reduceArray = this.characters.reduce ((acc,cur) =>  acc + cur.gifts , 0);
     this.result = reduceArray;
     this.codeButtons = true;
+    this.jsCode = "const reduceArray = characters.reduce ((acc,cur) =>  acc + cur.gifts , 0)";
+
   }
   },
 
