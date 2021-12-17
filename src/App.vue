@@ -118,7 +118,10 @@ export default {
     },
     updateCharacters(){
     this.updatedCharacters = this.characters;
-    this.result = ''
+    this.result = '';
+    this.jsCode = '';
+    this.vueCode = '';
+    this.codeButtons = false;
     },
     map(){
       const mapArray = this.characters.map(character => character.name);
@@ -133,9 +136,12 @@ export default {
       const filterArray = this.characters.filter(character => character.gender == gender);
       this.updatedCharacters = filterArray;
       this.codeButtons = true;
+      this.jsCode = "const filterArray = characters.map(character => character.gender == 'male')";
+      this.vueCode = 'const filterArray = this.characters.filter(character => character.gender == gender)';
     },
     sort(property){
       this.codeButtons = true;
+      
       if(property == "height"){
         this.characters.sort((a,b)=>  a.height - b.height);
       }

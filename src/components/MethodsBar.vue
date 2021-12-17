@@ -38,7 +38,7 @@
             <p>{{result}}</p>
         </div>
 
-        <div class="code-box" v-if="codeButtons">
+        <div class="code-box" v-if="codeButtons" >
             <button  @click="showJsCode">Show JS code</button>
             <button  @click="showVueCode">Show Vue code</button>
             <div>
@@ -70,7 +70,9 @@ export default{
         }
     },
     methods:{
+        
         showMapOptions(){
+            this.hideCode();
             this.mapOptions = !this.mapOptions;
             this.filterOptions = false,
             this.sortOptions = false,
@@ -80,6 +82,7 @@ export default{
             this.$emit('refresh')
         },
         showFilterOptions(){
+            this.hideCode();
             this.filterOptions = !this.filterOptions;
             this.mapOptions =  false,
             this.sortOptions = false,
@@ -89,6 +92,7 @@ export default{
             this.$emit('refresh')
         },
         showSortOptions(){
+            this.hideCode();
             this.sortOptions = !this.sortOptions;
              this.mapOptions =  false,
             this.filterOptions = false,
@@ -98,6 +102,7 @@ export default{
             this.$emit('refresh')
         },
         showEveryOptions(){
+            this.hideCode();
             this.everyOptions = !this.everyOptions;
             this.mapOptions =  false,
             this.filterOptions = false,
@@ -107,6 +112,7 @@ export default{
             this.$emit('refresh')
         },
         showSomeOptions(){
+            this.hideCode();
             this.someOptions = !this.someOptions;
             this.mapOptions =  false,
             this.filterOptions = false,
@@ -116,6 +122,7 @@ export default{
             this.$emit('refresh')
         },
         showReduceOptions(){
+            this.hideCode();
             this.reduceOptions = !this.reduceOptions
             this.mapOptions =  false,
             this.filterOptions = false,
@@ -131,9 +138,14 @@ export default{
         showVueCode(){
             this.vueCodeVisible = true
             this.jsCodeVisible = false;
+        },
+        hideCode(){
+            this.vueCodeVisible = false;
+            this.jsCodeVisible = false;
         }
+ 
+    },
 
-    }
 }
 </script>
 <style scoped>
