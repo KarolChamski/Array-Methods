@@ -126,7 +126,7 @@ export default{
             this.$emit('refresh')
         },
         showJsCode(){
-            this.jsCodeVisible = true
+            this.jsCodeVisible = !this.jsCodeVisible
         },
         hideCode(){
             this.jsCodeVisible = false;
@@ -141,6 +141,7 @@ export default{
     .buttons-bar{
         display: flex;
         justify-content: space-around;
+        margin-top: 1rem;
     }
 
     .action-box{
@@ -165,10 +166,10 @@ export default{
     pre{
         background-color: rgb(0, 0, 0);
         color: white;
+        z-index: 4;
     }
 
 button{
-font-size: 22px;
 box-shadow: 0px 3px 6px #00000017;
 border-radius: 10px;
 border: none;

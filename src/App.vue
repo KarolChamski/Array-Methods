@@ -202,7 +202,7 @@ export default {
 }
 
 html {
-  font-family: 'relation-two', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -220,8 +220,10 @@ body {
   padding-right: 0.5rem;
 }
 button{
-  font-family: 'relation-two';
+  font-family: 'Roboto', sans-serif;
   cursor: pointer;
+  padding: 0.3rem 1.5rem;
+  
 }
 
 </style>

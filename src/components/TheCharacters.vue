@@ -58,8 +58,8 @@ export default {
 }
 
 .character-name {
-  font-size: 16px;
       width: 100%;
+      font-family: 'relation-two', sans-serif;
     text-align: center;
 }
 @media (min-width: 1024px) {
