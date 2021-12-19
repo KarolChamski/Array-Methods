@@ -203,6 +203,7 @@ export default {
 
 html {
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 body {
@@ -223,6 +224,7 @@ button{
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
   padding: 0.3rem 1.5rem;
+  font-weight: 300;
   
 }
 

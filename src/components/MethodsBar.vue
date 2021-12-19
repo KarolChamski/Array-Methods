@@ -175,6 +175,7 @@ border-radius: 10px;
 border: none;
 margin: 0 0.5rem 0.5rem;
 text-align: center;
+
     }
 
     @media (min-width: 1024px){

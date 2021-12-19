@@ -11,9 +11,7 @@
           I've made this examples using vue.js framework, but don't worry, i'll give you vanilla javascript code.
           Here is starting code, which is the base for our examples - We'll be working on christmas characters and their properties! 
         </p>
-        <div class="buttons">
-            <button @click="showJs">Vanilla JavaScript</button>
-        </div>
+
 
         <div class="modal-flex">
 
@@ -130,17 +128,7 @@ export default{
             vueVisible: false,
         }
     },
-    methods: {
 
-        showJs(){
-            this.jsVisible = true;
-            this.vueVisible = false;
-        },
-        showVue(){
-            this.vueVisible = true ;
-            this.jsVisible = false;
-        }
-    },
 
 }
 </script>
@@ -187,6 +175,7 @@ justify-content: flex-end;
     height: 300px;
     background-color: rgb(0, 0, 0);
     color: white;
+    margin-top: 1rem;
 }
 .code-js,
 .code-vue{
