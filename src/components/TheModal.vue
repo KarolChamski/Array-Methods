@@ -5,7 +5,7 @@
             <button @click="$emit('closeModal')"><img src="../assets/close.svg" alt="zamknij okno"></button>
         </div>
       <div class="modal">
-        <h2>Array Methods</h2>
+        <h1>Array Methods</h1>
         <p>
           Hello, I want to simply explain you how array methods works. 
           I've made this examples using vue.js framework, but don't worry, i'll give you vanilla javascript code.
@@ -107,10 +107,10 @@
         
         </div>
 
+
+        </div>
         <div class="modal-go">
             <button @click="$emit('closeModal')">OK, let's go!</button>
-        </div>
-
         </div>
 
 
@@ -140,7 +140,7 @@ export default{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   
@@ -153,14 +153,20 @@ export default{
 .modal-flex{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .modal-go{
-    justify-self: flex-end;
-    margin-left: 2rem;
+  margin: 2rem;
+    display: flex;
+    justify-content: center;
+   
 }
 .modal-close button{
     padding: 1rem;
     margin-top: 1rem;
+    background: none;
+    border: none;
+    color: rgb(255, 255, 255);
 }
 .modal-close{
 width: 100%;
@@ -169,6 +175,10 @@ justify-content: flex-end;
 }
 .modal-go button{
     padding: 1rem 2rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    border: none
 }
 
 .modal-code{
@@ -188,10 +198,17 @@ pre{
     height: 100%;
     overflow-y: auto;
 }
-
-
-
 button{
     font-family: sans-serif;
+}
+h1{
+  font-family: 'relation-two', sans-serif;
+  font-size: 60px;
+  text-align: center;
+}
+@media (min-width: 1024px){
+  .modal-code{
+    height: 450px;
+}
 }
 </style>

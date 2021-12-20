@@ -10,7 +10,7 @@
         <button :class="{ active: everyOptions }" @click="showEveryOptions">Every</button>
         <button :class="{ active: someOptions }" @click="showSomeOptions">Some</button>
         <button :class="{ active: reduceOptions }" @click="showReduceOptions">Reduce</button>
-        <button @click="$emit('showModal')" >GUIDE</button>
+        <button class="active" @click="$emit('showModal')" >GUIDE</button>
     </div>
 
     <div class="action-box">
@@ -35,7 +35,7 @@
 
 
         <div class="result-box" v-if="result !== '' ">
-            <p>{{result}}</p>
+        <p>Result: {{result}}</p>
         </div>
 
         
@@ -156,16 +156,21 @@ export default{
         display: flex;
         flex-direction: column;
     }
+    .result-box{
+        display: flex;
+    }
     .result-box p{
         background-color: #fff;
         padding: 1rem 3rem;
         box-shadow: 0px 3px 6px #00000017;
-        border-radius: 10px;
     }
     pre{
+        padding: 1rem 0.5rem;
         background-color: rgb(0, 0, 0);
         color: white;
         z-index: 4;
+        width: 540px;
+        overflow: auto;
     }
 
 button{
@@ -179,6 +184,12 @@ button:hover{
     background-color: rgb(160, 0, 0);
     color: rgb(255, 255, 255);
 }
+
+    @media (min-width: 768px){
+            pre{
+        width: auto;
+    }
+    }
 
     @media (min-width: 1024px){
         button {

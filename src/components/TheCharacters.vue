@@ -7,7 +7,7 @@
         class="character"
       >
         <div class="cloud">
-          <p>Name:{{ character.name }}</p>
+          <p class="cloud-name">{{ character.name }}</p>
           <p>Gifts given: {{ character.gifts }}</p>
         </div>
 
@@ -36,7 +36,11 @@ export default {
   border-radius: 5px;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  transition: opacity 0.5s;
+  transition: opacity 0.3s;
+}
+.cloud-name{
+  font-family: 'relation-two', sans-serif;
+  font-size: 24px;
 }
 .characters {
   display: flex;

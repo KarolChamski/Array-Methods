@@ -1,4 +1,4 @@
-<template>
+b<template>
   <mobile-dialog></mobile-dialog>
   <methods-bar :namesOption="option.namesOption" :giftsOption="option.giftsOption" :heightOption="option.heightOption" :boysOption="option.boysOption" :girlsOption="option.girlsOption" @showModal="showModal" :codeButtons="codeButtons" :jsCode="jsCode" :result="result" @refresh="updateCharacters"  @filter="filter" @map="map" @sort="sort" @every="every" @some="some" @reduce="reduce"></methods-bar>
   <the-characters :characters="updatedCharacters" ></the-characters>
@@ -173,7 +173,8 @@ export default {
             return 1
           }
         });
-        this.jsCode = "const sortNameArray = characters.sort((a,b) =>{ if (a.name < b.name){ return -1 } else { return 1 } })";
+        this.jsCode =
+         "const sortNameArray = characters.sort((a,b) => { if (a.name < b.name){ return -1 } else { return 1 } })";
         this.resetOptions();
         this.option.namesOption = true;
 
