@@ -143,7 +143,7 @@ export default{
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: center;
+  
 }
 .modal {
   font-family: 'Roboto';
@@ -159,7 +159,8 @@ export default{
     margin-left: 2rem;
 }
 .modal-close button{
-    padding: 1rem
+    padding: 1rem;
+    margin-top: 1rem;
 }
 .modal-close{
 width: 100%;

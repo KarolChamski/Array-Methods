@@ -1,5 +1,5 @@
 <template>
-
+  <mobile-dialog></mobile-dialog>
   <methods-bar @showModal="showModal" :codeButtons="codeButtons" :jsCode="jsCode" :result="result" @refresh="updateCharacters"  @filter="filter" @map="map" @sort="sort" @every="every" @some="some" @reduce="reduce"></methods-bar>
   <the-characters :characters="updatedCharacters" ></the-characters>
   <the-modal @closeModal="modalVisible = false" :modalVisible="modalVisible"></the-modal>
@@ -11,12 +11,14 @@
 import MethodsBar from './components/MethodsBar.vue';
 import TheCharacters from './components/TheCharacters.vue';
 import TheModal from './components/TheModal.vue';
+import MobileDialog from './components/MobileDialog.vue';
 
 export default {
   components:{
     MethodsBar,
     TheCharacters,
-    TheModal
+    TheModal,
+    MobileDialog
   },
   data(){
     return{
