@@ -30,22 +30,22 @@ export default {
 <style scoped>
 .cloud {
   display: none;
-  text-align: center;
   opacity: 0;
-  background-color: #fff;
-  border-radius: 5px;
+  text-align: center;
   padding: 0.5rem;
   margin-bottom: 1rem;
+  border-radius: 5px;
   transition: opacity 0.3s;
+  background-color: #fff;
 }
-.cloud-name{
-  font-family: 'relation-two', sans-serif;
+.cloud-name {
   font-size: 24px;
+  font-family: "relation-two", sans-serif;
 }
 .characters {
+  position: absolute;
   display: flex;
   align-items: flex-end;
-  position: absolute;
   bottom: 0;
 }
 .character-img {
@@ -53,18 +53,16 @@ export default {
   justify-self: center;
 }
 .character {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   align-self: flex-end;
-
+  overflow: hidden;
 }
-
 .character-name {
-      width: 100%;
-      font-family: 'relation-two', sans-serif;
-    text-align: center;
+  width: 100%;
+  text-align: center;
+  font-family: "relation-two", sans-serif;
 }
 @media (min-width: 1024px) {
   .cloud {
@@ -80,6 +78,5 @@ export default {
   .character-name {
     font-size: 26px;
   }
-
 }
 </style>

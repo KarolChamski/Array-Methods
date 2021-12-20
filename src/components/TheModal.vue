@@ -1,24 +1,25 @@
 <template>
   <div class="background" v-if="modalVisible">
     <div class="wrapper">
-        <div class="modal-close">
-            <button @click="$emit('closeModal')"><img src="../assets/close.svg" alt="zamknij okno"></button>
-        </div>
+      <div class="modal-close">
+        <button @click="$emit('closeModal')">
+          <img src="../assets/close.svg" alt="zamknij okno" />
+        </button>
+      </div>
       <div class="modal">
         <h1>Array Methods</h1>
         <p>
-          Hello, I want to simply explain you how array methods works. 
-          I've made this examples using vue.js framework, but don't worry, i'll give you vanilla javascript code.
-          Here is starting code, which is the base for our examples - We'll be working on christmas characters and their properties! 
+          Hello, I want to simply explain you how array methods works. I've made
+          this examples using vue.js framework, but don't worry, i'll give you
+          vanilla javascript code. Here is starting code, which is the base for
+          our examples - We'll be working on christmas characters and their
+          properties!
         </p>
 
-
         <div class="modal-flex">
-
-        <div class="modal-code">
-            
-        <div class="code-js" v-if="jsVisible">
-        <pre>
+          <div class="modal-code">
+            <div class="code-js" v-if="jsVisible">
+              <pre>
         const characters = [
         {
           name: "Micky",                 
@@ -102,113 +103,103 @@
           type: "elf"
         },
       ]        
-            </pre>
-        </div>
-        
-        </div>
-
-
+            </pre
+              >
+            </div>
+          </div>
         </div>
         <div class="modal-go">
-            <button @click="$emit('closeModal')">OK, let's go!</button>
+          <button @click="$emit('closeModal')">OK, let's go!</button>
         </div>
-
-
       </div>
     </div>
   </div>
 </template>
 <script>
-
-export default{
-  props: ['modalVisible'],
-    data(){
-        return{
-            jsVisible: true,
-            vueVisible: false,
-        }
-    },
-
-
-}
+export default {
+  props: ["modalVisible"],
+  data() {
+    return {
+      jsVisible: true,
+      vueVisible: false,
+    };
+  },
+};
 </script>
 <style scoped>
 .background {
   position: fixed;
-  z-index: 9998;
+  display: flex;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 9998;
   background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  
 }
 .modal {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   z-index: 9999;
   color: rgb(255, 255, 255);
 }
-.modal-flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.modal-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.modal-go{
+.modal-go {
+  display: flex;
+  justify-content: center;
   margin: 2rem;
-    display: flex;
-    justify-content: center;
-   
 }
-.modal-close button{
-    padding: 1rem;
-    margin-top: 1rem;
-    background: none;
-    border: none;
-    color: rgb(255, 255, 255);
+.modal-close button {
+  padding: 1rem;
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255);
 }
-.modal-close{
-width: 100%;
-display: flex;
-justify-content: flex-end;
+.modal-close {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
-.modal-go button{
-    padding: 1rem 2rem;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border-radius: 10px;
-    border: none
+.modal-go button {
+  padding: 1rem 2rem;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
 }
 
-.modal-code{
-    width: 400px;
-    height: 300px;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    margin-top: 1rem;
+.modal-code {
+  width: 400px;
+  height: 300px;
+  margin-top: 1rem;
+  background-color: rgb(0, 0, 0);
+  color: white;
 }
 .code-js,
-.code-vue{
-    overflow-y: hidden;
-    height: 100%;
-
+.code-vue {
+  height: 100%;
+  overflow-y: hidden;
 }
-pre{
-    height: 100%;
-    overflow-y: auto;
+pre {
+  height: 100%;
+  overflow-y: auto;
 }
-button{
-    font-family: sans-serif;
+button {
+  font-family: sans-serif;
 }
-h1{
-  font-family: 'relation-two', sans-serif;
+h1 {
   font-size: 60px;
   text-align: center;
+  font-family: "relation-two", sans-serif;
 }
-@media (min-width: 1024px){
-  .modal-code{
+@media (min-width: 1024px) {
+  .modal-code {
     height: 450px;
-}
+  }
 }
 </style>
