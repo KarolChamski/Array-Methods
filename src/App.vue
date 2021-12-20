@@ -1,6 +1,6 @@
 <template>
   <mobile-dialog></mobile-dialog>
-  <methods-bar @showModal="showModal" :codeButtons="codeButtons" :jsCode="jsCode" :result="result" @refresh="updateCharacters"  @filter="filter" @map="map" @sort="sort" @every="every" @some="some" @reduce="reduce"></methods-bar>
+  <methods-bar :namesOption="option.namesOption" :giftsOption="option.giftsOption" :heightOption="option.heightOption" :boysOption="option.boysOption" :girlsOption="option.girlsOption" @showModal="showModal" :codeButtons="codeButtons" :jsCode="jsCode" :result="result" @refresh="updateCharacters"  @filter="filter" @map="map" @sort="sort" @every="every" @some="some" @reduce="reduce"></methods-bar>
   <the-characters :characters="updatedCharacters" ></the-characters>
   <the-modal @closeModal="modalVisible = false" :modalVisible="modalVisible"></the-modal>
 
@@ -27,6 +27,13 @@ export default {
       result: '',
       jsCode: '',
       vueCode: '',
+      option: [
+        {girlsOption: false},
+        {boysOption: false},
+        {heightOption: false},
+        {namesOption: false},
+        {giftsOption: false},
+      ],
       characters: [
         {
           name: "Micky",
@@ -128,7 +135,6 @@ export default {
     map(){
       const mapArray = this.characters.map(character => character.name);
       this.result = "Names of characters: " +  mapArray;
-
       this.codeButtons = true;
       this.jsCode = 'const mapArray = characters.map(character => character.name)';
     },
@@ -138,8 +144,15 @@ export default {
       this.codeButtons = true;
       if(gender == 'male'){
         this.jsCode = "const filterArray = characters.map(character => character.gender == 'male')";
+        this.resetOptions();
+        this.option.boysOption = true;
+
+        
+
       } else if (gender == 'female'){
         this.jsCode = "const filterArray = characters.map(character => character.gender == 'female')";
+        this.resetOptions();
+        this.option.girlsOption = true;
       }
 
     },
@@ -149,7 +162,8 @@ export default {
       if(property == "height"){
         this.characters.sort((a,b)=>  a.height - b.height);
         this.jsCode = "const sortHeightArray = characters.sort((a,b) =>  a.height - b.height)";
-        
+        this.resetOptions();
+        this.option.heightOption = true;
       }
       else if(property == "name"){
         this.characters.sort((a,b)=>{
@@ -160,11 +174,17 @@ export default {
           }
         });
         this.jsCode = "const sortNameArray = characters.sort((a,b) =>{ if (a.name < b.name){ return -1 } else { return 1 } })";
+        this.resetOptions();
+        this.option.namesOption = true;
+
+
 
       }
       else{
         this.characters.sort((a,b)=> a.gifts - b.gifts);
         this.jsCode = "const sortNameArray = characters.sort( (a,b) => a.gifts - b.gifts)";
+        this.resetOptions();
+        this.option.giftsOption = true;
       }
     },
   every(){
@@ -187,6 +207,10 @@ export default {
     this.codeButtons = true;
     this.jsCode = "const reduceArray = characters.reduce ((acc,cur) =>  acc + cur.gifts , 0)";
 
+  },
+  resetOptions(){
+    const mapOptions = this.option.map(option => option.value == false);
+    this.option = mapOptions
   }
   },
 
