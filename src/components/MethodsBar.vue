@@ -19,7 +19,7 @@
       <button :class="{ active: reduceOptions }" @click="showReduceOptions">
         Reduce
       </button>
-      <button class="active" @click="$emit('showModal')">GUIDE</button>
+      <button class="guide" @click="$emit('showModal')">GUIDE</button>
     </div>
 
     <div class="action-box">
@@ -207,7 +207,7 @@ export default {
 </script>
 <style scoped>
 .active {
-  background-color: rgb(136, 0, 0);
+  background-color: #74afb3;
   color: rgb(255, 255, 255);
 }
 .buttons-bar {
@@ -250,7 +250,11 @@ button {
 }
 button:hover {
   color: rgb(255, 255, 255);
-  background-color: rgb(160, 0, 0);
+  background-color: #74afb3;
+}
+.guide{
+  background-color: rgb(167, 7, 7);
+  color: #fff;
 }
 
 @media (min-width: 768px) {

@@ -254,6 +254,9 @@ export default {
 html {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+    background-image: url('./assets/Background.jpg');
+background-position: center;
+background-size: cover;
 }
 
 body {
@@ -261,8 +264,9 @@ body {
   max-height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  background-color: #c1e5e2;
+
 }
+
 .wrapper {
   max-width: 1200px;
   margin-right: auto;

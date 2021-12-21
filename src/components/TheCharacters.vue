@@ -42,6 +42,7 @@ export default {
   font-size: 24px;
   font-family: "relation-two", sans-serif;
 }
+
 .characters {
   position: absolute;
   display: flex;
