@@ -1,12 +1,19 @@
 <template>
   <div class="background" v-if="modalVisible">
     <div class="wrapper">
+
+
+
+
+      <div class="modal">
       <div class="modal-close">
         <button @click="$emit('closeModal')">
           <img src="../assets/close.svg" alt="zamknij okno" />
         </button>
       </div>
-      <div class="modal">
+
+
+
         <h1>Array Methods</h1>
         <p>
           Hello, I want to simply explain you how array methods works. I've made
@@ -17,7 +24,9 @@
         </p>
 
         <div class="modal-flex">
+
           <div class="modal-code">
+
             <div class="code-js" v-if="jsVisible">
               <pre>
         const characters = [
@@ -106,11 +115,15 @@
             </pre
               >
             </div>
+
           </div>
+
         </div>
+
         <div class="modal-go">
           <button @click="$emit('closeModal')">OK, let's go!</button>
         </div>
+
       </div>
     </div>
   </div>
