@@ -260,11 +260,10 @@ background-size: cover;
 }
 
 body {
-  height: -webkit-fill-available;
+  height: 100vh;
   max-height: 100vh;
   margin: 0;
   overflow-x: hidden;
-
 }
 
 .wrapper {

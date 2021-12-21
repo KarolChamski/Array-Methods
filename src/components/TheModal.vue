@@ -18,7 +18,7 @@
           properties!
         </p>
 
-        <div class="modal-flex">
+
 
           <div class="modal-code">
 
@@ -113,7 +113,6 @@
 
           </div>
 
-        </div>
 
         <div class="modal-go">
           <button @click="$emit('closeModal')">OK, let's go!</button>
@@ -160,6 +159,7 @@ export default {
   display: flex;
   justify-content: center;
   margin: 2rem;
+  padding-bottom: 3rem;
 }
 .modal-close button {
   padding: 1rem;
