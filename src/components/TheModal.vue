@@ -2,17 +2,12 @@
   <div class="background" v-if="modalVisible">
     <div class="wrapper">
 
-
-
-
       <div class="modal">
       <div class="modal-close">
         <button @click="$emit('closeModal')">
           <img src="../assets/close.svg" alt="zamknij okno" />
         </button>
       </div>
-
-
 
         <h1>Array Methods</h1>
         <p>
