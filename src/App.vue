@@ -59,7 +59,7 @@ export default {
           height: 2,
           gifts: 23,
           dressColor: "green",
-          img: "Micky.png",
+          img: "micky.png",
           gender: "male",
           type: "elf",
         },

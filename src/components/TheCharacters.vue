@@ -13,7 +13,7 @@
 
         <img
           class="character-img"
-          :src="`/img/${character.img}`"
+          :src="`./img/${character.img}`"
           alt="Sylwetka postaci"
         />
         <p class="character-name">{{ character.name }}</p>
