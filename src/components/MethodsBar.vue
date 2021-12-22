@@ -33,14 +33,14 @@
         </button>
 
         <button
-          :class="{ active: girlsOption }"
+          :class="{ active: codeButtons && girlsOption }"
           @click="$emit('filter', 'female')"
           v-if="filterOptions"
         >
           Girls
         </button>
         <button
-          :class="{ active: boysOption }"
+          :class="{ active: codeButtons && boysOption }"
           @click="$emit('filter', 'male')"
           v-if="filterOptions"
         >
@@ -48,21 +48,21 @@
         </button>
 
         <button
-          :class="{ active: heightOption }"
+          :class="{ active: codeButtons && heightOption }"
           v-if="sortOptions"
           @click="$emit('sort', 'height')"
         >
           By Height
         </button>
         <button
-          :class="{ active: namesOption }"
+          :class="{ active: codeButtons && namesOption }"
           v-if="sortOptions"
           @click="$emit('sort', 'name')"
         >
           By Names
         </button>
         <button
-          :class="{ active: giftsOption }"
+          :class="{ active: codeButtons && giftsOption }"
           v-if="sortOptions"
           @click="$emit('sort', 'gifts')"
         >
@@ -228,9 +228,11 @@ export default {
   display: flex;
 }
 .result-box p {
-  padding: 1rem 3rem;
+  padding: 0.2rem 3rem;
   box-shadow: 0px 3px 6px #00000017;
   background-color: #fff;
+  margin-top: 0;
+  z-index: 9997;
 }
 pre {
   width: 540px;
@@ -255,6 +257,9 @@ button:hover {
 .guide{
   background-color: rgb(167, 7, 7);
   color: #fff;
+}
+.code-box{
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
