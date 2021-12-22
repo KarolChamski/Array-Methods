@@ -11,7 +11,7 @@
 
         <h1>Array Methods</h1>
         <p>
-          Hello, I want to simply explain you how array methods works. I've made
+          Hello, I want to simply explain you how array methods work. I've made
           this examples using vue.js framework, but don't worry, i'll give you
           vanilla javascript code. Here is starting code, which is the base for
           our examples - We'll be working on christmas characters and their
