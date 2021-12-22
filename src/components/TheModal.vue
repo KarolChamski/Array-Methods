@@ -159,7 +159,7 @@ export default {
   display: flex;
   justify-content: center;
   margin: 2rem;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 .modal-close button {
   padding: 1rem;
