@@ -1,24 +1,10 @@
-# array-methods
+# Array Methods Christmas app :christmas_tree:
+This is an app for javascript beginners where you can understand how array methods work. <br/>
+You can try it on christmas characters and see how their position and properties depends on used method. <br/>
+Merry Christmas! :santa:
 
-## Project setup
-```
-npm install
-```
+### Technologies used
+I created this App with Vue 3, without using vuex - component communication is based on props and emits. 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## DEMO
+[DEMO](https://karolchamski.github.io/Array-Methods/)
