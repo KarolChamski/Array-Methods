@@ -260,6 +260,7 @@ button:hover {
 }
 .code-box{
   margin-bottom: 0;
+  z-index: 9998;
 }
 
 @media (min-width: 768px) {
