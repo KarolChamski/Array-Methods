@@ -165,12 +165,12 @@ export default {
       this.codeButtons = true;
       if (gender == "male") {
         this.jsCode =
-          "const filterArray = characters.map(character => character.gender == 'male')";
+          "const filterArray = characters.filter(character => character.gender == 'male')";
         this.resetOptions();
         this.option.boysOption = true;
       } else if (gender == "female") {
         this.jsCode =
-          "const filterArray = characters.map(character => character.gender == 'female')";
+          "const filterArray = characters.filter(character => character.gender == 'female')";
         this.resetOptions();
         this.option.girlsOption = true;
       }
